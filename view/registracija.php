@@ -69,8 +69,8 @@
     <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
     <div class="row">
         <div class="col-md-8">
-            <h3>ULOGUJ SE</h3>
-            <form name="logovanje" id="logovanjeForm" novalidate>
+            <h3>REGISTRUJ SE</h3>
+            <form name="registracija" id="registracijaForm" novalidate>
                 <div class="control-group form-group">
 
                     <div class="controls">
@@ -86,9 +86,17 @@
                     </div>
                 </div>
 
+                <div class="control-group form-group">
+
+                    <div class="controls">
+                        <label>Email adresa:</label>
+                        <input type="text" class="form-control" id="email" required data-validation-required-message="Please enter your name.">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
                 <div id="success"></div>
                 <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary">Uloguj se</button>
+                <button type="submit" class="btn btn-primary">Registruj se</button>
             </form>
         </div>
 
