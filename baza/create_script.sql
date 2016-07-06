@@ -1,5 +1,5 @@
 CREATE TABLE `korisnik` (
-  `id_korisnik` int(11) NOT NULL,
+  `id_korisnik` int(11) NOT NULL AUTO_INCREMENT,
   `korisnicko_ime` varchar(100) NOT NULL,
   `lozinka` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE `korisnik` (
 
 
 CREATE TABLE `podsetnik` (
-  `id_podsetnik` int(11) NOT NULL,
+  `id_podsetnik` int(11) NOT NULL AUTO_INCREMENT,
   `id_korisnik` int(11) NOT NULL,
   `opis` varchar(2000) NOT NULL,
   `period` int(11) NOT NULL,
