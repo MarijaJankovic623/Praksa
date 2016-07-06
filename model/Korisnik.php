@@ -29,5 +29,8 @@ class Korisnik
         return null;
     }
 
-
 }
+
+
+$k = new Korisnik();
+var_dump( $k->login("marko","marko"));
