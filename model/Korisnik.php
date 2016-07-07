@@ -29,8 +29,26 @@ class Korisnik
         return null;
     }
 
+
+
+    public function registracija($kime, $lozinka, $email){
+
+                $conn = Konekcija :: get();
+
+                $stmt = $conn->stmt_init();
+                $stmt->prepare("SELECT * FROM korisnik WHERE  korisnicko_ime  = ?");
+                $stmt->bind_param("s",$kime);
+                $stmt->execute();
+
+                if($stmt->get_result()->fetch_assoc()) return false;
+
+         $stmt = $conn->stmt_init();
+         $stmt->prepare("INSERT INTO korisnik(korisnicko_ime, lozinka, email) VALUES(?,?,?)");
+         $stmt->bind_param("sss", $kime, $lozinka, $email);
+         $stmt->execute();
+
+         return true;
+     }
 }
 
 
-$k = new Korisnik();
-var_dump( $k->login("marko","marko"));

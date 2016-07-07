@@ -48,7 +48,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="about.html">Uloguj se</a>
+                    <a href="<?php echo MY_PATH ?>index.php/Index/login">Uloguj se</a>
                 </li>
                 <li>
                     <a href="<?php echo MY_PATH ?>index.php/Index/registracija">Registruj se</a>
@@ -70,25 +70,25 @@
     <div class="row">
         <div class="col-md-8">
             <h3>ULOGUJ SE</h3>
-            <form name="logovanje" id="logovanjeForm" novalidate>
+            <form name="logovanje" id="logovanjeForm" action = "<?php echo MY_PATH ?>index.php/Index/login" method = "POST"novalidate>
                 <div class="control-group form-group">
 
                     <div class="controls">
                         <label>Korisnicko ime:</label>
-                        <input type="text" class="form-control" id="korisnickoime" required data-validation-required-message="Please enter your name.">
+                        <input type="text" class="form-control" name="korisnickoime" required data-validation-required-message="Please enter your name.">
                         <p class="help-block"></p>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Lozinka:</label>
-                        <input type="tel" class="form-control" id="lozinka" required data-validation-required-message="Please enter your phone number.">
+                        <input type="tel" class="form-control" name="lozinka" required data-validation-required-message="Please enter your phone number.">
                     </div>
                 </div>
 
                 <div id="success"></div>
                 <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary">Uloguj se</button>
+                <button type="submit" class="btn btn-primary" name="logovanjeButton">Uloguj se</button>
             </form>
         </div>
 

@@ -48,11 +48,17 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="<?php echo MY_PATH ?>index.php/Index/login">Uloguj se</a>
+                    <a href="<?php echo MY_PATH ?>index.php/Index/prelistavanje">Pregled svih podsetnika</a>
                 </li>
-                <li>
-                    <a href="<?php echo MY_PATH ?>index.php/Index/registracija">Registruj se</a>
+
+                <li class="active">
+                    <a href="<?php echo MY_PATH ?>index.php/Index/dodavanje">Dodaj novi podsetnik</a>
                 </li>
+
+                <li class="active">
+                    <a href="contact.html">Izloguj se</a>
+                </li>
+
 
             </ul>
         </div>
@@ -68,34 +74,41 @@
     <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
     <div class="row">
         <div class="col-md-8">
-            <h3>REGISTRUJ SE</h3>
-            <form name="registracija" id="registracijaForm" action = "<?php echo MY_PATH ?>index.php/Index/registracija" method = "POST">
+            <h3>DODAJ PODSETNIK</h3>
+            <form name="dodavanje" id="dodavanjeForm" novalidate>
                 <div class="control-group form-group">
 
                     <div class="controls">
-                        <label>Korisnicko ime:</label>
-                        <input type="text" class="form-control" name="korisnickoime" required data-validation-required-message="Please enter your name.">
+                        <label>Naziv podsetnika:</label>
+                        <input type="text" class="form-control" id="naziv" required data-validation-required-message="Please enter your name.">
                         <p class="help-block"></p>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Lozinka:</label>
-                        <input type="tel" class="form-control" name="lozinka" required data-validation-required-message="Please enter your phone number.">
+                        <label>Opis podsetnika:</label>
+                        <input type="tel" class="form-control" id="opis" required data-validation-required-message="Please enter your phone number.">
                     </div>
                 </div>
 
                 <div class="control-group form-group">
-
                     <div class="controls">
-                        <label>Email adresa:</label>
-                        <input type="text" class="form-control" name="email" required data-validation-required-message="Please enter your name.">
-                        <p class="help-block"></p>
+                        <label>OPeriod:</label>
+                        <input type="tel" class="form-control" id="opis" required data-validation-required-message="Please enter your phone number.">
+                    </div>
+                </div>
+
+
+
+                <div class="control-group form-group">
+                    <div class="controls">
+                        <label>Vreme:</label>
+                        <input type="tel" class="form-control" id="vreme" required data-validation-required-message="Please enter your phone number.">
                     </div>
                 </div>
                 <div id="success"></div>
                 <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary" name = 'registracijaButton'>Registruj se</button>
+                <button type="submit" class="btn btn-primary">DODAJ</button>
             </form>
         </div>
 

@@ -6,10 +6,24 @@
  * Date: 06/07/2016
  * Time: 14:07
  */
-require "C:\wamp\www\Praksa\PHPMailer\PHPMailerAutoload.php";
+//require "C:\wamp\www\Praksa\PHPMailer\PHPMailerAutoload.php";
 
 class Podsetnik
 {
+    public function dohvati_sve_podsetnike(){
+        $conn = Konekcija::get();
+
+        $stmt = $conn->stmt_init();
+        $stmt->prepare("SELECT * FROM podsetnik ");
+       // $stmt->bind_param("ss", $kime, $lozinka);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+    
+    
+    /*
+    
+    
     public function posalji($email,$text){
 
         ini_set("SMTP","smtp.gmail.com");
@@ -20,7 +34,7 @@ class Podsetnik
         mail($email,"Reminder",$text);
     }
 
-
+    
 
 function smtpmailer($to, $from, $from_name, $subject, $body) {
     global $error;
@@ -45,8 +59,6 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
         return true;
     }
 }
+
+    */
 }
-$p = new Podsetnik();
-//$p->posalji("marko.r.kastratovic@gmail.com","Poruka");
-$p->smtpmailer("marko.r.kastratovic@gmail.com","marko.r.kastratovic@gmail.com","Pera","Naslov","telo");
-var_dump($error);

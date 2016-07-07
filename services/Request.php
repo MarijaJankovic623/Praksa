@@ -45,7 +45,8 @@ var_dump($_SERVER['REQUEST_URI']);
 
     }
     public function getMethod(){
-
+        $parts = explode('?',$this->_method);
+        $this->_method = array_shift($parts);
         return $this->_method;
 
     }
