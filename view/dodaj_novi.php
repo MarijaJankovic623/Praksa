@@ -36,7 +36,8 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -75,40 +76,46 @@
     <div class="row">
         <div class="col-md-8">
             <h3>DODAJ PODSETNIK</h3>
-            <form name="dodavanje" id="dodavanjeForm" novalidate>
+            <form name="dodavanje" id="dodavanjeForm" action="<?php echo MY_PATH ?>index.php/Index/dodavanje"
+                  method="POST" novalidate>
                 <div class="control-group form-group">
 
                     <div class="controls">
                         <label>Naziv podsetnika:</label>
-                        <input type="text" class="form-control" id="naziv" required data-validation-required-message="Please enter your name.">
+                        <input type="text" class="form-control" name="naziv" required
+                               data-validation-required-message="Please enter your name.">
                         <p class="help-block"></p>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Opis podsetnika:</label>
-                        <input type="tel" class="form-control" id="opis" required data-validation-required-message="Please enter your phone number.">
+                        <input type="text" class="form-control" name="opis" required
+                               data-validation-required-message="Please enter your name.">
                     </div>
                 </div>
-
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>OPeriod:</label>
-                        <input type="tel" class="form-control" id="opis" required data-validation-required-message="Please enter your phone number.">
-                    </div>
-                </div>
-
 
 
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Vreme:</label>
-                        <input type="tel" class="form-control" id="vreme" required data-validation-required-message="Please enter your phone number.">
+                        <input type="text" class="form-control" name="vreme" required
+                               data-validation-required-message="Please enter your name.">
                     </div>
                 </div>
+
+                <input type="checkbox" name="PON"> Ponedeljak<br>
+                <input type="checkbox" name="UTO"> Utorak<br>
+                <input type="checkbox" name="SRE"> Sreda<br>
+                <input type="checkbox" name="CET"> Cetvrtak<br>
+                <input type="checkbox" name="PET"> Petak<br>
+                <input type="checkbox" name="SUB"> Subota<br>
+                <input type="checkbox" name="NED"> Nedelja<br>
+
+
                 <div id="success"></div>
                 <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary">DODAJ</button>
+                <button type="submit" class="btn btn-primary" name="dodajButton">DODAJ</button>
             </form>
         </div>
 
