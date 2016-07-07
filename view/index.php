@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Notifikator</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo MY_PATH ?>view/css/bootstrap.min.css" rel="stylesheet">
@@ -36,18 +36,19 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand" href="">Notifikator</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li>
+                <li class="active">
                     <a href="<?php echo MY_PATH ?>index.php/Index/login">Uloguj se</a>
                 </li>
                 <li>
@@ -70,23 +71,30 @@
     <div class="row">
         <div class="col-md-8">
             <h3>ULOGUJ SE</h3>
-            <form name="logovanje" id="logovanjeForm" action = "<?php echo MY_PATH ?>index.php/Index/login" method = "POST"novalidate>
+            <form name="logovanje" id="logovanjeForm" action="<?php echo MY_PATH ?>index.php/Index/login" method="POST"
+                  novalidate>
                 <div class="control-group form-group">
 
                     <div class="controls">
                         <label>Korisnicko ime:</label>
-                        <input type="text" class="form-control" name="korisnickoime" required data-validation-required-message="Please enter your name.">
+                        <input type="text" class="form-control" name="korisnickoime" required
+                               data-validation-required-message="Please enter your name.">
                         <p class="help-block"></p>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
                         <label>Lozinka:</label>
-                        <input type="tel" class="form-control" name="lozinka" required data-validation-required-message="Please enter your phone number.">
+                        <input type="tel" class="form-control" name="lozinka" required
+                               data-validation-required-message="Please enter your phone number.">
                     </div>
                 </div>
 
-                <div id="success"></div>
+                <div id="success">
+                    <h4>
+                        <?php if (isset($poruka)) echo $poruka; ?>
+                    </h4>
+                </div>
                 <!-- For success/fail messages -->
                 <button type="submit" class="btn btn-primary" name="logovanjeButton">Uloguj se</button>
             </form>

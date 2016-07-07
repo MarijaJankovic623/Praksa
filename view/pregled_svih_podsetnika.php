@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Notifikator</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo MY_PATH ?>view/css/bootstrap.min.css" rel="stylesheet">
@@ -36,27 +36,28 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand" href="">Notifikator</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li>
+                <li class="active">
                     <a href="<?php echo MY_PATH ?>index.php/Index/prelistavanje">Pregled svih podsetnika</a>
                 </li>
 
-                <li class="active">
+                <li>
                     <a href="<?php echo MY_PATH ?>index.php/Index/dodavanje">Dodaj novi podsetnik</a>
                 </li>
 
-                <li class="active">
-                    <a href="contact.html">Izloguj se</a>
+                <li>
+                    <a href="<?php echo MY_PATH ?>index.php/Index/logout">Izloguj se</a>
                 </li>
             </ul>
         </div>
@@ -118,44 +119,46 @@
         <?php foreach ($podsetnici as $podsetnik) { ?>
 
 
-            <div class="col-md-4" >
-            <div class="panel panel-default" >
-                <div class="panel-heading" >
-                    <h4 ><i class="fa fa-fw fa-check" ></i ><b><?php echo $podsetnik['naziv']; ?></h4 >
-                </div >
-                <div class="panel-body" >
-                    <p><?php echo $podsetnik['opis']; ?></p>
-                    <hr>
-                    <p><?php echo $podsetnik['vreme']; ?></p>
-                    <hr>
-                    <p><?php if($podsetnik['ponedeljak'] == 1)echo 'PONEDELJAK' ?></p>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i><b><?php echo $podsetnik['naziv']; ?></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $podsetnik['opis']; ?></p>
+                        <hr>
+                        <p><?php echo $podsetnik['vreme']; ?></p>
+                        <hr>
+                        <p><?php if ($podsetnik['ponedeljak'] == 1) echo 'PONEDELJAK' ?></p>
 
-                    <p><?php if($podsetnik['utorak'] == 1)echo 'UTORAK'?></p>
+                        <p><?php if ($podsetnik['utorak'] == 1) echo 'UTORAK' ?></p>
 
-                    <p><?php if($podsetnik['sreda'] == 1)echo 'SREDA'?></p>
+                        <p><?php if ($podsetnik['sreda'] == 1) echo 'SREDA' ?></p>
 
-                    <p><?php if($podsetnik['cetvrtak'] == 1)echo 'CETVRTAK' ?></p>
+                        <p><?php if ($podsetnik['cetvrtak'] == 1) echo 'CETVRTAK' ?></p>
 
-                    <p><?php if($podsetnik['petak'] == 1)echo 'PETAK' ?></p>
+                        <p><?php if ($podsetnik['petak'] == 1) echo 'PETAK' ?></p>
 
-                    <p><?php if($podsetnik['subota'] == 1)echo 'SUBOTA' ?></p>
+                        <p><?php if ($podsetnik['subota'] == 1) echo 'SUBOTA' ?></p>
 
-                    <p><?php if($podsetnik['nedelja'] == 1)echo 'NEDELJA' ?></p>
+                        <p><?php if ($podsetnik['nedelja'] == 1) echo 'NEDELJA' ?></p>
 
-                    <hr>
+                        <hr>
 
-                   <a href = "#" class="btn btn-default" > Izmeni </a >
-                </div >
-            </div >
-        </div >
-    <?php } ?>
-    <div class="col-md-4">
+                        <a href="#" class="btn btn-default"> Izmeni </a>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                        eveniet incidunt dicta nostrum quod?</p>
                     <a href="#" class="btn btn-default">Learn More</a>
                 </div>
             </div>
@@ -166,7 +169,9 @@
                     <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                        eveniet incidunt dicta nostrum quod?</p>
                     <a href="#" class="btn btn-default">Learn More</a>
                 </div>
             </div>
@@ -174,18 +179,17 @@
     </div>
     <!-- /.row -->
 
-</div>
 
-<hr>
+    <hr>
 
-<!-- Footer -->
-<footer>
-    <div class="row">
-        <div class="col-lg-12">
-            <p>Copyright &copy; Your Website 2014</p>
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Your Website 2014</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 </div>
 <!-- /.container -->
