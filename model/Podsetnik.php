@@ -10,7 +10,8 @@
 
 class Podsetnik
 {
-    public function dohvati_sve_podsetnike($idkorisnik){
+    public function dohvati_sve_podsetnike($idkorisnik)
+    {
         $conn = Konekcija::get();
 
         $stmt = $conn->stmt_init();
@@ -21,17 +22,17 @@ class Podsetnik
     }
 
 
-    public function kreiraj_novi($podsetnik, $period){
+    public function kreiraj_novi($podsetnik, $period)
+    {
         $conn = Konekcija::get();
 
         $stmt = $conn->stmt_init();
         $stmt->prepare("INSERT INTO podsetnik(id_korisnik, naziv, opis, vreme, ponedeljak, utorak, sreda, cetvrtak, petak, subota, nedelja) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-        $stmt->bind_param("isssiiiiiii", $podsetnik['id_korisnik'],$podsetnik['naziv'],$podsetnik['opis'],$podsetnik['vreme'], $period['ponedeljak'],$period['utorak'],$period['sreda'],$period['cetvrtak'],$period['petak'],$period['subota'],$period['nedelja']);
-        $stmt->execute();
-       return $stmt->execute();
-        
-        
+        $stmt->bind_param("isssiiiiiii", $podsetnik['id_korisnik'], $podsetnik['naziv'], $podsetnik['opis'], $podsetnik['vreme'], $period['ponedeljak'], $period['utorak'], $period['sreda'], $period['cetvrtak'], $period['petak'], $period['subota'], $period['nedelja']);
+        return $stmt->execute();
+
+
     }
-    
+
 
 }

@@ -16,7 +16,7 @@ class IndexCtrl{
 
 
     function __construct(){
-
+        session_start();
         $this->model_korisnik = new Korisnik();
         $this->model_podsetnik = new Podsetnik();
 
@@ -29,7 +29,6 @@ class IndexCtrl{
     public function login()
     {
         $poruka = "";
-        session_start();
 
 
         if(isset($_POST['logovanjeButton'])) {
@@ -53,7 +52,7 @@ class IndexCtrl{
 
     public function logout()
     {
-        session_start();
+
 
         session_destroy();
         include("view/index.php");
@@ -84,7 +83,7 @@ class IndexCtrl{
     {
         $this->sessionCheck();
 
-        $podsetnici = $this->model_podsetnik->dohvati_sve_podsetnike();
+        $podsetnici = $this->model_podsetnik->dohvati_sve_podsetnike($_SESSION['idkorisnik']);
 
         include("view/pregled_svih_podsetnika.php");
  
@@ -93,9 +92,6 @@ class IndexCtrl{
 
     public function dodavanje()
     {
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
 
         if (isset($_POST['dodajButton'])) {
 

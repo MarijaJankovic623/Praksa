@@ -56,8 +56,8 @@
                     <a href="<?php echo MY_PATH ?>index.php/Index/dodavanje">Dodaj novi podsetnik</a>
                 </li>
 
-                <li class="active">
-                    <a href="contact.html">Izloguj se</a>
+                <li>
+                    <a href="<?php echo MY_PATH ?>index.php/Index/logout">Izloguj se</a>
                 </li>
 
 
