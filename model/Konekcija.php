@@ -8,7 +8,6 @@
  */
 class  Konekcija {
 
-
     public static function get() {
 
         $servername = "localhost";

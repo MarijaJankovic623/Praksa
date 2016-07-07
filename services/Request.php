@@ -18,7 +18,7 @@ class Request
     public function __construct(){
 
         $parts = explode('/',$_SERVER['REQUEST_URI']);
-var_dump($_SERVER['REQUEST_URI']);
+
         array_shift($parts);
         array_shift($parts);
         array_shift($parts);
