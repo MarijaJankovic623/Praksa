@@ -118,17 +118,17 @@
         <?php foreach ($podsetnici as $podsetnik) { ?>
 
 
-            <div class="col-md-4" >
-            <div class="panel panel-default" >
-                <div class="panel-heading" >
-                    <h4 ><i class="fa fa-fw fa-check" ></i ><b><?php echo $podsetnik['naziv']; ?></h4 >
-                </div >
-                <div class="panel-body" >
-                    <p><?php echo $podsetnik['opis']; ?></p>
-                    <hr>
-                    <p><?php echo $podsetnik['vreme']; ?></p>
-                    <hr>
-                    <p><?php if($podsetnik['ponedeljak'] == 1)echo 'PONEDELJAK' ?></p>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i><b><?php echo $podsetnik['naziv']; ?></h4>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $podsetnik['opis']; ?></p>
+                        <hr>
+                        <p><?php echo $podsetnik['vreme']; ?></p>
+                        <hr>
+                        <p><?php if ($podsetnik['ponedeljak'] == 1) echo 'PONEDELJAK' ?></p>
 
                     <p><?php if($podsetnik['utorak'] == 1)echo 'UTORAK'?></p>
 
@@ -144,27 +144,52 @@
 
                     <hr>
 
-                   <a href = "#" class="btn btn-default" > Izmeni </a >
-                </div >
-            </div >
-        </div >
-    <?php } ?>
-
-
-
+                        <a href="#" class="btn btn-default"> Izmeni </a>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                        eveniet incidunt dicta nostrum quod?</p>
+                    <a href="#" class="btn btn-default">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
+                </div>
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
+                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
+                        eveniet incidunt dicta nostrum quod?</p>
+                    <a href="#" class="btn btn-default">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
 
 </div>
 
-<hr>
+    <hr>
 
-<!-- Footer -->
-<footer>
-    <div class="row">
-        <div class="col-lg-12">
-            <p>Copyright &copy; Your Website 2014</p>
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Your Website 2014</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 </div>
 <!-- /.container -->
