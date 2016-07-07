@@ -12,7 +12,7 @@ include "Konekcija.php";
 class Korisnik
 {
 
-    public function login($kime, $lozinka){
+    public  function login($kime, $lozinka){
         $conn = Konekcija::get();
 
         $stmt = $conn->stmt_init();

@@ -6,32 +6,8 @@
  * Time: 12:07
  */
 
+require('services\Router.php');
+require('services\Request.php');
 
-$url = $_SERVER['REQUEST_URI'];
-
-$temp = explode('?',$url)[1];
-$ctrl = explode('/',$temp)[0];
-$mtd = explode('/',$temp)[1];
-
-
-
-
-switch ($ctrl){
-    case 'nesto' :
-        echo "da";
-        break;
-    case 'nesto1' : 
-        echo "da";
-        break;
-    case 'nesto2' :
-        echo "da";
-        break;
-    case 'nesto3' :
-        echo "da";
-        break;
-    case 'nesto4' :
-        echo "da";
-        break;
-}
-
+Router::route(new Request());
 
