@@ -119,7 +119,7 @@
     </div>
     <!-- /.row -->
         <?php $i = 0 ; foreach ($podsetnici as $podsetnik) { ?>
-            <?php if($i == 0) echo "<div class='row'> ";?>
+            <?php if(($i+3)%4 == 0) echo("<div class='row'>");?>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -150,7 +150,7 @@
                     </div>
                 </div>
             </div>
-            <?php if($i%3 == 0 && $i != 0) echo "</div><div class='row'>"; $i++; ?>
+            <?php if(($i+3)%4 == 0) echo("</div> ");?>
         <?php } echo "</div>"?>
 
 

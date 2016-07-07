@@ -96,7 +96,7 @@
                 </div>
 
 
-                Sati:    <input type="number" min="0" max = "23" step="1" name = "sati" >
+                Sati:    <input type="number" min="0" max = "23" step="1" name = "sati" readonly>
                 Minuti:    <input type="number" min="0" max = "59" step="1" name = "minuti" >
 
 
