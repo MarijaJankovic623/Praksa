@@ -36,7 +36,8 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -47,16 +48,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li>
+                <li class="active">
                     <a href="<?php echo MY_PATH ?>index.php/Index/prelistavanje">Pregled svih podsetnika</a>
                 </li>
 
-                <li class="active">
+                <li>
                     <a href="<?php echo MY_PATH ?>index.php/Index/dodavanje">Dodaj novi podsetnik</a>
                 </li>
 
-                <li class="active">
-                    <a href="contact.html">Izloguj se</a>
+                <li>
+                    <a href="<?php echo MY_PATH ?>index.php/Index/logout">Izloguj se</a>
                 </li>
             </ul>
         </div>
@@ -115,9 +116,10 @@
                 MOJI PODSETNICI
             </h1>
         </div>
-        <?php foreach ($podsetnici as $podsetnik) { ?>
-
-
+    </div>
+    <!-- /.row -->
+        <?php $i = 0 ; foreach ($podsetnici as $podsetnik) { ?>
+            <?php if($i == 0) echo "<div class='row'> ";?>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -130,55 +132,29 @@
                         <hr>
                         <p><?php if ($podsetnik['ponedeljak'] == 1) echo 'PONEDELJAK' ?></p>
 
-                    <p><?php if($podsetnik['utorak'] == 1)echo 'UTORAK'?></p>
+                        <p><?php if ($podsetnik['utorak'] == 1) echo 'UTORAK' ?></p>
 
-                    <p><?php if($podsetnik['sreda'] == 1)echo 'SREDA'?></p>
+                        <p><?php if ($podsetnik['sreda'] == 1) echo 'SREDA' ?></p>
 
-                    <p><?php if($podsetnik['cetvrtak'] == 1)echo 'CETVRTAK' ?></p>
+                        <p><?php if ($podsetnik['cetvrtak'] == 1) echo 'CETVRTAK' ?></p>
 
-                    <p><?php if($podsetnik['petak'] == 1)echo 'PETAK' ?></p>
+                        <p><?php if ($podsetnik['petak'] == 1) echo 'PETAK' ?></p>
 
-                    <p><?php if($podsetnik['subota'] == 1)echo 'SUBOTA' ?></p>
+                        <p><?php if ($podsetnik['subota'] == 1) echo 'SUBOTA' ?></p>
 
-                    <p><?php if($podsetnik['nedelja'] == 1)echo 'NEDELJA' ?></p>
+                        <p><?php if ($podsetnik['nedelja'] == 1) echo 'NEDELJA' ?></p>
 
-                    <hr>
+                        <hr>
 
                         <a href="#" class="btn btn-default"> Izmeni </a>
                     </div>
                 </div>
             </div>
-        <?php } ?>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open Source</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
-                </div>
-                <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla
-                        aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus
-                        eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.row -->
+            <?php if($i%3 == 0 && $i != 0) echo "</div><div class='row'>"; $i++; ?>
+        <?php } echo "</div>"?>
 
-</div>
+
+
 
     <hr>
 
