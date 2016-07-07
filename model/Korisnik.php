@@ -23,6 +23,7 @@ class Korisnik
         $korisnik = $stmt->get_result()->fetch_assoc();
 
         if (isset($korisnik['id_korisnik'])){
+            
             return $korisnik['id_korisnik'];
         }
 

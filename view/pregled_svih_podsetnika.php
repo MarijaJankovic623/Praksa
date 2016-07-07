@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Notifikator</title>
+    <title>Modern Business - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo MY_PATH ?>view/css/bootstrap.min.css" rel="stylesheet">
@@ -36,28 +36,27 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="">Notifikator</a>
+            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active">
+                <li>
                     <a href="<?php echo MY_PATH ?>index.php/Index/prelistavanje">Pregled svih podsetnika</a>
                 </li>
 
-                <li>
+                <li class="active">
                     <a href="<?php echo MY_PATH ?>index.php/Index/dodavanje">Dodaj novi podsetnik</a>
                 </li>
 
-                <li>
-                    <a href="<?php echo MY_PATH ?>index.php/Index/logout">Izloguj se</a>
+                <li class="active">
+                    <a href="contact.html">Izloguj se</a>
                 </li>
             </ul>
         </div>
@@ -131,19 +130,19 @@
                         <hr>
                         <p><?php if ($podsetnik['ponedeljak'] == 1) echo 'PONEDELJAK' ?></p>
 
-                        <p><?php if ($podsetnik['utorak'] == 1) echo 'UTORAK' ?></p>
+                    <p><?php if($podsetnik['utorak'] == 1)echo 'UTORAK'?></p>
 
-                        <p><?php if ($podsetnik['sreda'] == 1) echo 'SREDA' ?></p>
+                    <p><?php if($podsetnik['sreda'] == 1)echo 'SREDA'?></p>
 
-                        <p><?php if ($podsetnik['cetvrtak'] == 1) echo 'CETVRTAK' ?></p>
+                    <p><?php if($podsetnik['cetvrtak'] == 1)echo 'CETVRTAK' ?></p>
 
-                        <p><?php if ($podsetnik['petak'] == 1) echo 'PETAK' ?></p>
+                    <p><?php if($podsetnik['petak'] == 1)echo 'PETAK' ?></p>
 
-                        <p><?php if ($podsetnik['subota'] == 1) echo 'SUBOTA' ?></p>
+                    <p><?php if($podsetnik['subota'] == 1)echo 'SUBOTA' ?></p>
 
-                        <p><?php if ($podsetnik['nedelja'] == 1) echo 'NEDELJA' ?></p>
+                    <p><?php if($podsetnik['nedelja'] == 1)echo 'NEDELJA' ?></p>
 
-                        <hr>
+                    <hr>
 
                         <a href="#" class="btn btn-default"> Izmeni </a>
                     </div>
@@ -179,6 +178,7 @@
     </div>
     <!-- /.row -->
 
+</div>
 
     <hr>
 
