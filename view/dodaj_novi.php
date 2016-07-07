@@ -96,14 +96,12 @@
                 </div>
 
 
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Vreme:</label>
-                        <input type="text" class="form-control" name="vreme" required
-                               data-validation-required-message="Please enter your name.">
-                    </div>
-                </div>
+                Sati:    <input type="number" min="0" max = "23" step="1" name = "sati" >
+                Minuti:    <input type="number" min="0" max = "59" step="1" name = "minuti" >
 
+
+                </br>
+                </br>
                 <input type="checkbox" name="PON"> Ponedeljak<br>
                 <input type="checkbox" name="UTO"> Utorak<br>
                 <input type="checkbox" name="SRE"> Sreda<br>

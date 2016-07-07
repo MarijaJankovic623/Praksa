@@ -103,12 +103,16 @@ class IndexCtrl
             if (isset($_POST['NED'])) $switch['nedelja'] = 1;
             else $switch['nedelja'] = 0;
 
+
+            if($_POST['sati']<10) $_POST['sati']= "0".$_POST['sati'];
+            if($_POST['minuti']<10) $_POST['minuti']= "0".$_POST['minuti'];
+
             $podsetnik = array(
 
                 'id_korisnik' => $_SESSION["idkorisnik"],
                 'naziv' => $_POST['naziv'],
                 'opis' => $_POST['opis'],
-                'vreme' => $_POST['vreme']
+                'vreme' => $_POST['sati'].":". $_POST['minuti']
             );
 
             $this->model_podsetnik->kreiraj_novi($podsetnik, $switch);
