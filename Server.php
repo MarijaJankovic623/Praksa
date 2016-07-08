@@ -23,13 +23,14 @@ class Server
     private function getReminders(){
         $conn = new mysqli("localhost", "root", "", "notifikacije");
 
-        $time = date('h:i');
+        $hours = date('H') +2;
+        $time = $hours.date(':i');
         $day = date('w');
 
         var_dump($time);
+        var_dump($day);
 
-        $day = 6;
-        $time = "15:23";
+
         $upit = "";
         switch($day){
             case 1:
