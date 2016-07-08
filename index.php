@@ -8,5 +8,4 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-Router::route(new Request());
-
+(new Application())->start();

@@ -71,8 +71,7 @@
     <div class="row">
         <div class="col-md-8">
             <h3>ULOGUJ SE</h3>
-            <form name="logovanje" id="logovanjeForm" action="<?php echo MY_PATH ?>index.php/Index/login" method="POST"
-                  novalidate>
+            <form name="logovanje" id="logovanjeForm" action="<?php echo MY_PATH ?>index.php/Index/login" method="POST">
                 <div class="control-group form-group">
 
                     <div class="controls">
