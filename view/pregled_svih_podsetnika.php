@@ -122,9 +122,7 @@
     foreach ($podsetnici as $podsetnik) { ?>
     <?php if (($i + 3) % 4 == 0) echo("<div class='row'>"); ?>
     <div class="col-md-4">
-        <form name="brisanje" id="brisanjeForm"
-              action="<?php echo MY_PATH . 'index.php/Index/brisanje/' . $podsetnik['id_podsetnik']; ?>"
-              method="POST" novalidate>
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-check"></i><b><?php echo $podsetnik['naziv']; ?></h4>
@@ -156,7 +154,7 @@
                 </div>
 
     </div>
-        </form>
+     
 </div>
 <?php if (($i + 3) % 4 == 0) echo("</div> "); ?>
 <?php }
