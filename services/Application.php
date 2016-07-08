@@ -11,7 +11,7 @@ class Application
     public function start(){
         try {
 
-            Router::route(new Request());
+            Router::route(new Request($_SERVER['REQUEST_URI']));
 
         } catch( Response $exception){
 

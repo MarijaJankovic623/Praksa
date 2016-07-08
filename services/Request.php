@@ -15,13 +15,16 @@ class Request
 
     private $_args;
 
-    public function __construct(){
+    public function __construct($path){
 
-        $parts = explode('/',$_SERVER['REQUEST_URI']);
+
+        $parts = explode('index.php',$path);
+
+
+        $parts = explode('/',$parts[1]);
 
         array_shift($parts);
-        array_shift($parts);
-        array_shift($parts);
+
 
         $this->_controller = (($c = array_shift($parts))? $c: 'Index').'Ctrl';
         $this->_method = ($c = array_shift($parts))? $c: 'index';
