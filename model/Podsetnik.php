@@ -35,4 +35,15 @@ class Podsetnik
     }
 
 
+    public function obrisi_podsetnik($idpodsetnik){
+
+        $conn = Konekcija::get();
+
+        $stmt = $conn->stmt_init();
+        $stmt->prepare(" DELETE FROM podsetnik WHERE id_podsetnik= ?");
+        $stmt->bind_param("i",$idpodsetnik);
+        return $stmt->execute();
+
+
+    }
 }

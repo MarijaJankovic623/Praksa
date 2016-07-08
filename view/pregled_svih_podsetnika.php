@@ -118,54 +118,61 @@
         </div>
     </div>
     <!-- /.row -->
-        <?php $i = 0 ; foreach ($podsetnici as $podsetnik) { ?>
-            <?php if(($i+3)%4 == 0) echo("<div class='row'>");?>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i><b><?php echo $podsetnik['naziv']; ?></h4>
-                    </div>
-                    <div class="panel-body">
-                        <p><?php echo $podsetnik['opis']; ?></p>
-                        <hr>
-                        <p><?php echo $podsetnik['vreme']; ?></p>
-                        <hr>
-                        <p><?php if ($podsetnik['ponedeljak'] == 1) echo 'PONEDELJAK' ?></p>
-
-                        <p><?php if ($podsetnik['utorak'] == 1) echo 'UTORAK' ?></p>
-
-                        <p><?php if ($podsetnik['sreda'] == 1) echo 'SREDA' ?></p>
-
-                        <p><?php if ($podsetnik['cetvrtak'] == 1) echo 'CETVRTAK' ?></p>
-
-                        <p><?php if ($podsetnik['petak'] == 1) echo 'PETAK' ?></p>
-
-                        <p><?php if ($podsetnik['subota'] == 1) echo 'SUBOTA' ?></p>
-
-                        <p><?php if ($podsetnik['nedelja'] == 1) echo 'NEDELJA' ?></p>
-
-                        <hr>
-
-                        <a href="#" class="btn btn-default"> Izmeni </a>
-                    </div>
+    <?php $i = 0;
+    foreach ($podsetnici as $podsetnik) { ?>
+    <?php if (($i + 3) % 4 == 0) echo("<div class='row'>"); ?>
+    <div class="col-md-4">
+        <form name="brisanje" id="brisanjeForm"
+              action="<?php echo MY_PATH . 'index.php/Index/brisanje/' . $podsetnik['id_podsetnik']; ?>"
+              method="POST" novalidate>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4><i class="fa fa-fw fa-check"></i><b><?php echo $podsetnik['naziv']; ?></h4>
                 </div>
-            </div>
-            <?php if(($i+3)%4 == 0) echo("</div> ");?>
-        <?php } echo "</div>"?>
+                <div class="panel-body">
+                    <p><?php echo $podsetnik['opis']; ?></p>
+                    <hr>
+                    <p><?php echo $podsetnik['vreme']; ?></p>
+                    <hr>
+                    <p><?php if ($podsetnik['ponedeljak'] == 1) echo 'PONEDELJAK' ?></p>
+
+                    <p><?php if ($podsetnik['utorak'] == 1) echo 'UTORAK' ?></p>
+
+                    <p><?php if ($podsetnik['sreda'] == 1) echo 'SREDA' ?></p>
+
+                    <p><?php if ($podsetnik['cetvrtak'] == 1) echo 'CETVRTAK' ?></p>
+
+                    <p><?php if ($podsetnik['petak'] == 1) echo 'PETAK' ?></p>
+
+                    <p><?php if ($podsetnik['subota'] == 1) echo 'SUBOTA' ?></p>
+
+                    <p><?php if ($podsetnik['nedelja'] == 1) echo 'NEDELJA' ?></p>
+
+                    <hr>
 
 
+                    <a href="<?php echo MY_PATH . 'index.php/Index/brisanje/' . $podsetnik['id_podsetnik']; ?>" class="btn btn-default">OBRISI</a>
+
+                </div>
+
+    </div>
+        </form>
+</div>
+<?php if (($i + 3) % 4 == 0) echo("</div> "); ?>
+<?php }
+echo "</div>" ?>
 
 
-    <hr>
+<hr>
 
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
-            </div>
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Your Website 2014</p>
         </div>
-    </footer>
+    </div>
+</footer>
 
 </div>
 <!-- /.container -->

@@ -135,6 +135,21 @@ class IndexCtrl{
     }
 
     
+    public function brisanje($idpodsetnik){
+
+        var_dump($idpodsetnik);
+
+        $this->sessionCheck();
+
+        $podsetnici = $this->model_podsetnik->obrisi_podsetnik($idpodsetnik);
+
+        $this->prelistavanje();
+        
+        
+    }
+    
+    
+    
 
     private function sessionCheck(){
         if(!isset($_SESSION["idkorisnik"])){

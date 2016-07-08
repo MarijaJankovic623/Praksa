@@ -76,8 +76,7 @@
     <div class="row">
         <div class="col-md-8">
             <h3>DODAJ PODSETNIK</h3>
-            <form name="dodavanje" id="dodavanjeForm" action="<?php echo MY_PATH ?>index.php/Index/dodavanje"
-                  method="POST" novalidate>
+            <form name="dodavanje" id="dodavanjeForm" action="<?php echo MY_PATH ?>index.php/Index/dodavanje" method="POST" novalidate>
                 <div class="control-group form-group">
 
                     <div class="controls">
@@ -96,7 +95,7 @@
                 </div>
 
 
-                Sati:    <input type="number" min="0" max = "23" step="1" name = "sati" readonly>
+                Sati:    <input type="number" min="0" max = "23" step="1" name = "sati" >
                 Minuti:    <input type="number" min="0" max = "59" step="1" name = "minuti" >
 
 
