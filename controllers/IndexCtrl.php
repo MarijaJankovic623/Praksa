@@ -5,8 +5,7 @@
  * Date: 6.7.2016.
  * Time: 11:15
  */
-include "model/Korisnik.php";
-include "model/Podsetnik.php";
+
 
 class IndexCtrl{
 
@@ -40,12 +39,16 @@ class IndexCtrl{
             if ($_SESSION["idkorisnik"] = $this->model_korisnik->login($username, $lozinka))
                 $this->prelistavanje();
             else {
-                $poruka = "Pogresno ste uneli korisnicko ime ili sifru.";
-                include("view/index.php");
+                /*$poruka = "Pogresno ste uneli korisnicko ime ili sifru.";
+                include("view/index.php");*/
+                $view = new View('index.php');
+                echo $view->render(Array('poruka'=>'Pogresno ste uneli korisnicko ime ili sifru.'));
             }
 
         } else {
-            include("view/index.php");
+            //include("view/index.php");
+            $view = new View('index.php');
+            echo $view->render(Array());
         }
 
     }
