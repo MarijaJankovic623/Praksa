@@ -13,9 +13,10 @@ class Application
     public function __construct()
     {
         $this->container = new InversionOfControl();
-        $this->container->setSetter('IndexCtrl',function(){
+        $this->container->setSetter('IndexCtrl',function($con){
            return new IndexCtrl();
         });
+
     }
 
 

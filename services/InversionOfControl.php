@@ -30,7 +30,7 @@ class InversionOfControl
         }
 
         if (!isset($this->instances[$name])) {
-            $this->instances[$name] = $this->setters[$name]();
+            $this->instances[$name] = $this->setters[$name]($this);
         }
 
         return $this->instances[$name];

@@ -13,8 +13,7 @@ class Router
 
 
     public static function route(Request $request,InversionOfControl $container){
-
-      
+        
         $controller = $request->getController();
         $method = $request->getMethod();
         $args = $request->getArgs();
