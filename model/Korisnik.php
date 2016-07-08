@@ -7,7 +7,6 @@
  * Time: 13:09
  */
 
-include "Konekcija.php";
 
 class Korisnik
 {

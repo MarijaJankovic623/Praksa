@@ -6,7 +6,6 @@
  * Date: 06/07/2016
  * Time: 14:07
  */
-//require "C:\wamp\www\Praksa\PHPMailer\PHPMailerAutoload.php";
 
 class Podsetnik
 {

@@ -1,0 +1,9 @@
+{
+  "autoload": {
+    "classmap": [
+      "services",
+      "model",
+      "controllers"
+    ]
+  }
+}

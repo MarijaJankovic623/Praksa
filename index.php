@@ -6,8 +6,6 @@
  * Time: 12:07
  */
 
-require('services\Router.php');
-require('services\Request.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
-Router::route(new Request());
-
+(new Application())->start();
