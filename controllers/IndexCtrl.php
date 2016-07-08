@@ -137,7 +137,7 @@ class IndexCtrl{
     
     public function brisanje($idpodsetnik){
 
-        var_dump($idpodsetnik);
+       
 
         $this->sessionCheck();
 

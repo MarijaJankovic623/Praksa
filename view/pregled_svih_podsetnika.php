@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Notifikator</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo MY_PATH ?>view/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand" href="">Notifikator</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,44 +67,7 @@
 </nav>
 
 <!-- Header Carousel -->
-<header id="myCarousel" class="carousel slide">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-        <div class="item active">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 1</h2>
-            </div>
-        </div>
-        <div class="item">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 2</h2>
-            </div>
-        </div>
-        <div class="item">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-            <div class="carousel-caption">
-                <h2>Caption 3</h2>
-            </div>
-        </div>
-    </div>
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="icon-next"></span>
-    </a>
-</header>
 
 <!-- Page Content -->
 <div class="container">
@@ -120,9 +83,9 @@
     <!-- /.row -->
     <?php $i = 0;
     foreach ($podsetnici as $podsetnik) { ?>
-    <?php if (($i + 3) % 4 == 0) echo("<div class='row'>"); ?>
-    <div class="col-md-4">
-
+        <?php if ($i % 3 == 0) echo("<div class='row'>");
+        $i++; ?>
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-check"></i><b><?php echo $podsetnik['naziv']; ?></h4>
@@ -134,43 +97,39 @@
                     <hr>
                     <p><?php if ($podsetnik['ponedeljak'] == 1) echo 'PONEDELJAK' ?></p>
 
-                    <p><?php if ($podsetnik['utorak'] == 1) echo 'UTORAK' ?></p>
+                        <p><?php if ($podsetnik['utorak'] == 1) echo 'UTORAK' ?></p>
 
-                    <p><?php if ($podsetnik['sreda'] == 1) echo 'SREDA' ?></p>
+                        <p><?php if ($podsetnik['sreda'] == 1) echo 'SREDA' ?></p>
 
-                    <p><?php if ($podsetnik['cetvrtak'] == 1) echo 'CETVRTAK' ?></p>
+                        <p><?php if ($podsetnik['cetvrtak'] == 1) echo 'CETVRTAK' ?></p>
 
-                    <p><?php if ($podsetnik['petak'] == 1) echo 'PETAK' ?></p>
+                        <p><?php if ($podsetnik['petak'] == 1) echo 'PETAK' ?></p>
 
-                    <p><?php if ($podsetnik['subota'] == 1) echo 'SUBOTA' ?></p>
+                        <p><?php if ($podsetnik['subota'] == 1) echo 'SUBOTA' ?></p>
 
-                    <p><?php if ($podsetnik['nedelja'] == 1) echo 'NEDELJA' ?></p>
+                        <p><?php if ($podsetnik['nedelja'] == 1) echo 'NEDELJA' ?></p>
 
-                    <hr>
+                        <hr>
 
-
-                    <a href="<?php echo MY_PATH . 'index.php/Index/brisanje/' . $podsetnik['id_podsetnik']; ?>" class="btn btn-default">OBRISI</a>
-
+                    <a href="<?php echo MY_PATH . 'index.php/Index/brisanje/' . $podsetnik['id_podsetnik']; ?>" class="btn btn-default"> Obrisi </a>
                 </div>
-
-    </div>
-     
-</div>
-<?php if (($i + 3) % 4 == 0) echo("</div> "); ?>
-<?php }
-echo "</div>" ?>
-
-
-<hr>
-
-<!-- Footer -->
-<footer>
-    <div class="row">
-        <div class="col-lg-12">
-            <p>Copyright &copy; Your Website 2014</p>
+            </div>
         </div>
-    </div>
-</footer>
+        <?php if ($i % 3 == 0 ) echo("</div>"); ?>
+    <?php } ?>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <hr>
+                <p>Copyright &copy; Your Website 2014</p>
+            </div>
+        </div>
+    </footer>
 
 </div>
 <!-- /.container -->

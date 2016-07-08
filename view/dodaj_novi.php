@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>Notifikator</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo MY_PATH ?>view/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand" href="">Notifikator</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -76,7 +76,8 @@
     <div class="row">
         <div class="col-md-8">
             <h3>DODAJ PODSETNIK</h3>
-            <form name="dodavanje" id="dodavanjeForm" action="<?php echo MY_PATH ?>index.php/Index/dodavanje" method="POST" novalidate>
+            <form name="dodavanje" id="dodavanjeForm" action="<?php echo MY_PATH ?>index.php/Index/dodavanje"
+                  method="POST">
                 <div class="control-group form-group">
 
                     <div class="controls">
@@ -95,8 +96,8 @@
                 </div>
 
 
-                Sati:    <input type="number" min="0" max = "23" step="1" name = "sati" >
-                Minuti:    <input type="number" min="0" max = "59" step="1" name = "minuti" >
+                Sati: <input type="number" min="0" max="23" step="1" name="sati" required>
+                Minuti: <input type="number" min="0" max="59" step="1" name="minuti" required>
 
 
                 </br>
