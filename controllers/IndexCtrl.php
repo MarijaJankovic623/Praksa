@@ -8,22 +8,24 @@
 include "model/Korisnik.php";
 include "model/Podsetnik.php";
 
-class IndexCtrl{
+class IndexCtrl
+{
 
     private $model_korisnik;
     private $model_podsetnik;
 
 
-
-    function __construct(){
+    function __construct()
+    {
         session_start();
         $this->model_korisnik = new Korisnik();
         $this->model_podsetnik = new Podsetnik();
 
     }
 
-    public function index(){
-        include ("view/index.php");
+    public function index()
+    {
+        include("view/index.php");
     }
 
     public function login()
@@ -31,7 +33,7 @@ class IndexCtrl{
         $poruka = "";
 
 
-        if(isset($_POST['logovanjeButton'])) {
+        if (isset($_POST['logovanjeButton'])) {
 
 
             $username = $_POST['korisnickoime'];
@@ -86,13 +88,13 @@ class IndexCtrl{
         $podsetnici = $this->model_podsetnik->dohvati_sve_podsetnike($_SESSION['idkorisnik']);
 
         include("view/pregled_svih_podsetnika.php");
- 
-        
+
+
     }
 
     public function dodavanje()
     {
-
+        $this->sessionCheck();
         if (isset($_POST['dodajButton'])) {
 
             if (isset($_POST['PON'])) $switch['ponedeljak'] = 1;
@@ -117,15 +119,15 @@ class IndexCtrl{
             else $switch['nedelja'] = 0;
 
 
-            if($_POST['sati']<10) $_POST['sati']= "0".$_POST['sati'];
-            if($_POST['minuti']<10) $_POST['minuti']= "0".$_POST['minuti'];
+            if ($_POST['sati'] < 10) $_POST['sati'] = "0" . $_POST['sati'];
+            if ($_POST['minuti'] < 10) $_POST['minuti'] = "0" . $_POST['minuti'];
 
             $podsetnik = array(
 
                 'id_korisnik' => $_SESSION["idkorisnik"],
                 'naziv' => $_POST['naziv'],
                 'opis' => $_POST['opis'],
-                'vreme' => $_POST['sati'].":". $_POST['minuti']
+                'vreme' => $_POST['sati'] . ":" . $_POST['minuti']
             );
 
             $this->model_podsetnik->kreiraj_novi($podsetnik, $switch);
@@ -134,10 +136,10 @@ class IndexCtrl{
         } else include("view/dodaj_novi.php");
     }
 
-    
 
-    private function sessionCheck(){
-        if(!isset($_SESSION["idkorisnik"])){
+    private function sessionCheck()
+    {
+        if (!isset($_SESSION["idkorisnik"])) {
             $poruka = "Sram vas bilo.";
             include("view/index.php");
             exit();
