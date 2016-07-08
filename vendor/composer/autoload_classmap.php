@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Application' => $baseDir . '/services/Application.php',
     'IndexCtrl' => $baseDir . '/controllers/IndexCtrl.php',
+    'InversionOfControl' => $baseDir . '/services/InversionOfControl.php',
     'Konekcija' => $baseDir . '/model/Konekcija.php',
     'Korisnik' => $baseDir . '/model/Korisnik.php',
     'Podsetnik' => $baseDir . '/model/Podsetnik.php',

@@ -8,10 +8,22 @@
  */
 class Application
 {
+    private $container;
+
+    public function __construct()
+    {
+        $this->container = new InversionOfControl();
+        $this->container->setSetter('IndexCtrl',function(){
+           return new IndexCtrl();
+        });
+    }
+
+
     public function start(){
         try {
+            $req = new Request($_SERVER['REQUEST_URI']);
 
-            Router::route(new Request($_SERVER['REQUEST_URI']));
+            Router::route($req,$this->container);
 
         } catch( Response $exception){
 

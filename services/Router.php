@@ -12,13 +12,11 @@ class Router
 {
 
 
-    public static function route(Request $request){
+    public static function route(Request $request,InversionOfControl $container){
 
       
         $controller = $request->getController();
-
         $method = $request->getMethod();
-
         $args = $request->getArgs();
 
 
@@ -27,7 +25,7 @@ class Router
         if(is_readable($controllerFile)){
             require_once $controllerFile;
 
-            $controller = new $controller;
+            $controller = $container->getInstance($controller);
 
 
             if(!empty($args)){
