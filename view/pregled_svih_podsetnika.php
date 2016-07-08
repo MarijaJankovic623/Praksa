@@ -134,19 +134,19 @@
                     <hr>
                     <p><?php if ($podsetnik['ponedeljak'] == 1) echo 'PONEDELJAK' ?></p>
 
-                    <p><?php if ($podsetnik['utorak'] == 1) echo 'UTORAK' ?></p>
+                        <p><?php if ($podsetnik['utorak'] == 1) echo 'UTORAK' ?></p>
 
-                    <p><?php if ($podsetnik['sreda'] == 1) echo 'SREDA' ?></p>
+                        <p><?php if ($podsetnik['sreda'] == 1) echo 'SREDA' ?></p>
 
-                    <p><?php if ($podsetnik['cetvrtak'] == 1) echo 'CETVRTAK' ?></p>
+                        <p><?php if ($podsetnik['cetvrtak'] == 1) echo 'CETVRTAK' ?></p>
 
-                    <p><?php if ($podsetnik['petak'] == 1) echo 'PETAK' ?></p>
+                        <p><?php if ($podsetnik['petak'] == 1) echo 'PETAK' ?></p>
 
-                    <p><?php if ($podsetnik['subota'] == 1) echo 'SUBOTA' ?></p>
+                        <p><?php if ($podsetnik['subota'] == 1) echo 'SUBOTA' ?></p>
 
-                    <p><?php if ($podsetnik['nedelja'] == 1) echo 'NEDELJA' ?></p>
+                        <p><?php if ($podsetnik['nedelja'] == 1) echo 'NEDELJA' ?></p>
 
-                    <hr>
+                        <hr>
 
                     <a href="#" class="btn btn-default"> Izmeni </a>
                 </div>
