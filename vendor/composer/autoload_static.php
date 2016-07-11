@@ -15,6 +15,7 @@ class ComposerStaticInit894ca7e0ac2141be8cefd4698ad973c1
         'Podsetnik' => __DIR__ . '/../..' . '/src/model/Podsetnik.php',
         'Request' => __DIR__ . '/../..' . '/src/services/Request.php',
         'Router' => __DIR__ . '/../..' . '/src/services/Router.php',
+        'Security' => __DIR__ . '/../..' . '/src/services/Security.php',
         'View' => __DIR__ . '/../..' . '/src/services/View.php',
     );
 

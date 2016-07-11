@@ -15,6 +15,7 @@ class Security
 
     public function loginUser($userId){
         $_SESSION['userId'] = $userId;
+        
     }
 
     public function logoutUser(){
@@ -25,5 +26,10 @@ class Security
         return isset($_SESSION['userId']);
     }
 
+    public function getUserId(){
+
+
+       return  $_SESSION['userId'];
+    }
     
 }

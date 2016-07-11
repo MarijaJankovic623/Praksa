@@ -11,11 +11,16 @@ class IndexCtrl
 
     private $model_korisnik;
     private $model_podsetnik;
+    private $container;
+    private $security;
 
 
-    function __construct()
+
+    function __construct($container)
     {
-        session_start();
+        
+        $this->container = $container;
+        $this->security = $container->getInstance('Security');
         $this->model_korisnik = new Korisnik();
         $this->model_podsetnik = new Podsetnik();
 
@@ -39,8 +44,15 @@ class IndexCtrl
             $username = $_POST['korisnickoime'];
             $lozinka = $_POST['lozinka'];
 
-            if ($_SESSION["idkorisnik"] = $this->model_korisnik->login($username, $lozinka))
+            $userID = $this->model_korisnik->login($username, $lozinka);
+
+
+
+            if ( $userID != null) {
+
+                $this->security->loginUser($userID);
                 $this->prelistavanje();
+            }
             else {
                 $poruka = "Pogresno ste uneli korisnicko ime ili sifru.";
                 //include("view/index.php");*/
@@ -61,7 +73,7 @@ class IndexCtrl
     {
 
 
-        session_destroy();
+        $this->security->logoutUser();
         //include("view/index.php");
         $view = new View('index.php');
         echo $view->render(Array());
@@ -100,7 +112,7 @@ class IndexCtrl
     {
         $this->sessionCheck();
 
-        $podsetnici = $this->model_podsetnik->dohvati_sve_podsetnike($_SESSION['idkorisnik']);
+        $podsetnici = $this->model_podsetnik->dohvati_sve_podsetnike($this->security->getUserId());
 
         //include("view/pregled_svih_podsetnika.php");
         $view = new View('pregled_svih_podsetnika.php');
@@ -119,6 +131,7 @@ class IndexCtrl
 
             if (isset($_POST['UTO'])) $switch['utorak'] = 1;
             else $switch['utorak'] = 0;
+
 
             if (isset($_POST['SRE'])) $switch['sreda'] = 1;
             else $switch['sreda'] = 0;
@@ -141,7 +154,7 @@ class IndexCtrl
 
             $podsetnik = array(
 
-                'id_korisnik' => $_SESSION["idkorisnik"],
+                'id_korisnik' => $this->security->getUserId(),
                 'naziv' => $_POST['naziv'],
                 'opis' => $_POST['opis'],
                 'vreme' => $_POST['sati'] . ":" . $_POST['minuti']
@@ -176,7 +189,7 @@ class IndexCtrl
 
     private function sessionCheck()
     {
-        if (!isset($_SESSION["idkorisnik"])) {
+        if (!$this->security->checkUser()) {
             $poruka = "Sram vas bilo.";
            // include("view/index.php");
             $view = new View('index.php');

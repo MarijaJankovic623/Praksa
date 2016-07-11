@@ -14,5 +14,6 @@ return array(
     'Podsetnik' => $baseDir . '/src/model/Podsetnik.php',
     'Request' => $baseDir . '/src/services/Request.php',
     'Router' => $baseDir . '/src/services/Router.php',
+    'Security' => $baseDir . '/src/services/Security.php',
     'View' => $baseDir . '/src/services/View.php',
 );

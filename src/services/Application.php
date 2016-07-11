@@ -13,9 +13,17 @@ class Application
     public function __construct()
     {
         $this->container = new InversionOfControl();
-        $this->container->setSetter('IndexCtrl',function($ioc){
-           return new IndexCtrl();
+
+        $this->container->setSetter('Security', function($ioc){
+
+          return new Security();
         });
+
+
+        $this->container->setSetter('IndexCtrl',function($ioc){
+           return new IndexCtrl($ioc);
+        });
+
         $this->container->setSetter('Router',function($ioc){
            return new Router($ioc); 
         });
