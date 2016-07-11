@@ -10,9 +10,15 @@
 
 class Router
 {
+    private $ioc;
 
+    public function __construct($ioc)
+    {
+        $this->ioc = $ioc;
 
-    public static function route(Request $request,InversionOfControl $container){
+    }
+
+    public  function route(Request $request){
         
         $controller = $request->getController();
         $method = $request->getMethod();
@@ -24,7 +30,7 @@ class Router
         if(is_readable($controllerFile)){
             require_once $controllerFile;
 
-            $controller = $container->getInstance($controller);
+            $controller = $this->ioc->getInstance($controller);
 
 
             if(!empty($args)){

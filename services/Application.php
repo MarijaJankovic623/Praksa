@@ -13,8 +13,11 @@ class Application
     public function __construct()
     {
         $this->container = new InversionOfControl();
-        $this->container->setSetter('IndexCtrl',function($con){
+        $this->container->setSetter('IndexCtrl',function($ioc){
            return new IndexCtrl();
+        });
+        $this->container->setSetter('Router',function($ioc){
+           return new Router($ioc); 
         });
 
     }
@@ -24,7 +27,8 @@ class Application
         try {
             $req = new Request($_SERVER['REQUEST_URI']);
 
-            Router::route($req,$this->container);
+            $router = $this->container->getInstance('Router');
+            $router->route($req);
 
         } catch( Response $exception){
 
