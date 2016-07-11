@@ -12,13 +12,13 @@
     <title>Notifikator</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo MY_PATH ?>view/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo MY_PATH ?>web/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo MY_PATH ?>view/css/modern-business.css" rel="stylesheet">
+    <link href="<?php echo MY_PATH ?>web/css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo MY_PATH ?>view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo MY_PATH ?>web/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,16 +48,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="<?php echo MY_PATH ?>index.php/Index/prelistavanje">Pregled svih podsetnika</a>
-                </li>
-
                 <li class="active">
-                    <a href="<?php echo MY_PATH ?>index.php/Index/dodavanje">Dodaj novi podsetnik</a>
+                    <a href="<?php echo MY_PATH ?>web/index.php/Index/login">Uloguj se</a>
                 </li>
-
                 <li>
-                    <a href="<?php echo MY_PATH ?>index.php/Index/logout">Izloguj se</a>
+                    <a href="<?php echo MY_PATH ?>web/index.php/Index/registracija">Registruj se</a>
                 </li>
 
 
@@ -75,45 +70,32 @@
     <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
     <div class="row">
         <div class="col-md-8">
-            <h3>DODAJ PODSETNIK</h3>
-            <form name="dodavanje" id="dodavanjeForm" action="<?php echo MY_PATH ?>index.php/Index/dodavanje"
-                  method="POST">
+            <h3>ULOGUJ SE</h3>
+            <form name="logovanje" id="logovanjeForm" action="<?php echo MY_PATH ?>web/index.php/Index/login" method="POST">
                 <div class="control-group form-group">
 
                     <div class="controls">
-                        <label>Naziv podsetnika:</label>
-                        <input type="text" class="form-control" name="naziv" required
+                        <label>Korisnicko ime:</label>
+                        <input type="text" class="form-control" name="korisnickoime" required
                                data-validation-required-message="Please enter your name.">
                         <p class="help-block"></p>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Opis podsetnika:</label>
-                        <input type="text" class="form-control" name="opis" required
-                               data-validation-required-message="Please enter your name.">
+                        <label>Lozinka:</label>
+                        <input type="tel" class="form-control" name="lozinka" required
+                               data-validation-required-message="Please enter your phone number.">
                     </div>
                 </div>
 
-
-                Sati: <input type="number" min="0" max="23" step="1" name="sati" required>
-                Minuti: <input type="number" min="0" max="59" step="1" name="minuti" required>
-
-
-                </br>
-                </br>
-                <input type="checkbox" name="PON"> Ponedeljak<br>
-                <input type="checkbox" name="UTO"> Utorak<br>
-                <input type="checkbox" name="SRE"> Sreda<br>
-                <input type="checkbox" name="CET"> Cetvrtak<br>
-                <input type="checkbox" name="PET"> Petak<br>
-                <input type="checkbox" name="SUB"> Subota<br>
-                <input type="checkbox" name="NED"> Nedelja<br>
-
-
-                <div id="success"></div>
+                <div id="success">
+                    <h4>
+                        <?php if (isset($poruka)) echo $poruka; ?>
+                    </h4>
+                </div>
                 <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary" name="dodajButton">DODAJ</button>
+                <button type="submit" class="btn btn-primary" name="logovanjeButton">Uloguj se</button>
             </form>
         </div>
 
@@ -135,15 +117,15 @@
 <!-- /.container -->
 
 <!-- jQuery -->
-<script src="<?php echo MY_PATH ?>view/js/jquery.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo MY_PATH ?>view/js/bootstrap.min.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/bootstrap.min.js"></script>
 
 <!-- Contact Form JavaScript -->
 <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-<script src="<?php echo MY_PATH ?>view/js/jqBootstrapValidation.js"></script>
-<script src="<?php echo MY_PATH ?>view/js/contact_me.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/jqBootstrapValidation.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/contact_me.js"></script>
 
 </body>
 

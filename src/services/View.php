@@ -11,7 +11,7 @@ class View
     protected $file;
     protected $path;
 
-    function __construct($file,$path = 'view'){
+    function __construct($file,$path = '../src/view'){
         $this->path = $path;
         $this ->file = $file;
     }

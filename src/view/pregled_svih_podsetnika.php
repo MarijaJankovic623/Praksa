@@ -12,13 +12,13 @@
     <title>Notifikator</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo MY_PATH ?>view/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo MY_PATH ?>web/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo MY_PATH ?>view/css/modern-business.css" rel="stylesheet">
+    <link href="<?php echo MY_PATH ?>web/css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo MY_PATH ?>view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo MY_PATH ?>web/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,15 +49,15 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">
-                    <a href="<?php echo MY_PATH ?>index.php/Index/prelistavanje">Pregled svih podsetnika</a>
+                    <a href="<?php echo MY_PATH ?>web/index.php/Index/prelistavanje">Pregled svih podsetnika</a>
                 </li>
 
                 <li>
-                    <a href="<?php echo MY_PATH ?>index.php/Index/dodavanje">Dodaj novi podsetnik</a>
+                    <a href="<?php echo MY_PATH ?>web/index.php/Index/dodavanje">Dodaj novi podsetnik</a>
                 </li>
 
                 <li>
-                    <a href="<?php echo MY_PATH ?>index.php/Index/logout">Izloguj se</a>
+                    <a href="<?php echo MY_PATH ?>web/index.php/Index/logout">Izloguj se</a>
                 </li>
             </ul>
         </div>
@@ -111,7 +111,7 @@
 
                         <hr>
 
-                    <a href="<?php echo MY_PATH . 'index.php/Index/brisanje/' . $podsetnik['id_podsetnik']; ?>" class="btn btn-default"> Obrisi </a>
+                    <a href="<?php echo MY_PATH . 'web/index.php/Index/brisanje/' . $podsetnik['id_podsetnik']; ?>" class="btn btn-default"> Obrisi </a>
                 </div>
             </div>
         </div>
@@ -135,10 +135,10 @@
 <!-- /.container -->
 
 <!-- jQuery -->
-<script src="<?php echo MY_PATH ?>view/js/jquery.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo MY_PATH ?>view/js/bootstrap.min.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/bootstrap.min.js"></script>
 
 <!-- Script to Activate the Carousel -->
 <script>

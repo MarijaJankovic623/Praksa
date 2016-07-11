@@ -7,15 +7,15 @@ namespace Composer\Autoload;
 class ComposerStaticInit894ca7e0ac2141be8cefd4698ad973c1
 {
     public static $classMap = array (
-        'Application' => __DIR__ . '/../..' . '/services/Application.php',
-        'IndexCtrl' => __DIR__ . '/../..' . '/controllers/IndexCtrl.php',
-        'InversionOfControl' => __DIR__ . '/../..' . '/services/InversionOfControl.php',
-        'Konekcija' => __DIR__ . '/../..' . '/model/Konekcija.php',
-        'Korisnik' => __DIR__ . '/../..' . '/model/Korisnik.php',
-        'Podsetnik' => __DIR__ . '/../..' . '/model/Podsetnik.php',
-        'Request' => __DIR__ . '/../..' . '/services/Request.php',
-        'Router' => __DIR__ . '/../..' . '/services/Router.php',
-        'View' => __DIR__ . '/../..' . '/services/View.php',
+        'Application' => __DIR__ . '/../..' . '/src/services/Application.php',
+        'IndexCtrl' => __DIR__ . '/../..' . '/src/controllers/IndexCtrl.php',
+        'InversionOfControl' => __DIR__ . '/../..' . '/src/services/InversionOfControl.php',
+        'Konekcija' => __DIR__ . '/../..' . '/src/model/Konekcija.php',
+        'Korisnik' => __DIR__ . '/../..' . '/src/model/Korisnik.php',
+        'Podsetnik' => __DIR__ . '/../..' . '/src/model/Podsetnik.php',
+        'Request' => __DIR__ . '/../..' . '/src/services/Request.php',
+        'Router' => __DIR__ . '/../..' . '/src/services/Router.php',
+        'View' => __DIR__ . '/../..' . '/src/services/View.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

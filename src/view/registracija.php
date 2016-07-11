@@ -12,13 +12,13 @@
     <title>Notifikator</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo MY_PATH ?>view/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo MY_PATH ?>web/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo MY_PATH ?>view/css/modern-business.css" rel="stylesheet">
+    <link href="<?php echo MY_PATH ?>web/css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo MY_PATH ?>view/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo MY_PATH ?>web/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,10 +49,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="<?php echo MY_PATH ?>index.php/Index/login">Uloguj se</a>
+                    <a href="<?php echo MY_PATH ?>web/index.php/Index/login">Uloguj se</a>
                 </li>
                 <li class="active">
-                    <a href="<?php echo MY_PATH ?>index.php/Index/registracija">Registruj se</a>
+                    <a href="<?php echo MY_PATH ?>web/index.php/Index/registracija">Registruj se</a>
                 </li>
 
             </ul>
@@ -70,7 +70,7 @@
     <div class="row">
         <div class="col-md-8">
             <h3>REGISTRUJ SE</h3>
-            <form name="registracija" id="registracijaForm" action="<?php echo MY_PATH ?>index.php/Index/registracija"
+            <form name="registracija" id="registracijaForm" action="<?php echo MY_PATH ?>web/index.php/Index/registracija"
                   method="POST">
                 <div class="control-group form-group">
 
@@ -126,15 +126,15 @@
 <!-- /.container -->
 
 <!-- jQuery -->
-<script src="<?php echo MY_PATH ?>view/js/jquery.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="<?php echo MY_PATH ?>view/js/bootstrap.min.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/bootstrap.min.js"></script>
 
 <!-- Contact Form JavaScript -->
 <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-<script src="<?php echo MY_PATH ?>view/js/jqBootstrapValidation.js"></script>
-<script src="<?php echo MY_PATH ?>view/js/contact_me.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/jqBootstrapValidation.js"></script>
+<script src="<?php echo MY_PATH ?>web/js/contact_me.js"></script>
 
 </body>
 

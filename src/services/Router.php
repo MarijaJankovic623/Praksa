@@ -25,7 +25,7 @@ class Router
         $args = $request->getArgs();
 
 
-        $controllerFile = $_SERVER['DOCUMENT_ROOT'] . '/Praksa/controllers/' . $controller . '.php';
+        $controllerFile = $_SERVER['DOCUMENT_ROOT'] . '/Praksa/src/controllers/' . $controller . '.php';
 
         if(is_readable($controllerFile)){
             require_once $controllerFile;

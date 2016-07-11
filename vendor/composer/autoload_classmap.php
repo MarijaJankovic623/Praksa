@@ -6,13 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Application' => $baseDir . '/services/Application.php',
-    'IndexCtrl' => $baseDir . '/controllers/IndexCtrl.php',
-    'InversionOfControl' => $baseDir . '/services/InversionOfControl.php',
-    'Konekcija' => $baseDir . '/model/Konekcija.php',
-    'Korisnik' => $baseDir . '/model/Korisnik.php',
-    'Podsetnik' => $baseDir . '/model/Podsetnik.php',
-    'Request' => $baseDir . '/services/Request.php',
-    'Router' => $baseDir . '/services/Router.php',
-    'View' => $baseDir . '/services/View.php',
+    'Application' => $baseDir . '/src/services/Application.php',
+    'IndexCtrl' => $baseDir . '/src/controllers/IndexCtrl.php',
+    'InversionOfControl' => $baseDir . '/src/services/InversionOfControl.php',
+    'Konekcija' => $baseDir . '/src/model/Konekcija.php',
+    'Korisnik' => $baseDir . '/src/model/Korisnik.php',
+    'Podsetnik' => $baseDir . '/src/model/Podsetnik.php',
+    'Request' => $baseDir . '/src/services/Request.php',
+    'Router' => $baseDir . '/src/services/Router.php',
+    'View' => $baseDir . '/src/services/View.php',
 );

@@ -6,6 +6,6 @@
  * Time: 12:07
  */
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 (new Application())->start();
