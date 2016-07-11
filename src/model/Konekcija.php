@@ -9,14 +9,11 @@
 class  Konekcija {
 
     public static function get() {
+        $config = $GLOBALS["config"];
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "notifikacije";
+        $params =  $config['db'][DATABASE];
 
-
-        $conn = new mysqli($servername, $username, $password, $database);
+        $conn = new mysqli($params['servername'], $params['username'], $params['password'], $params['database']);
 
         if ($conn->connect_error != NULL) {
             exit();

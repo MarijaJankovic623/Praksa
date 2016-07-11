@@ -6,33 +6,32 @@
  * Date: 07/07/2016
  * Time: 12:05
  */
-
-
-
 class Server
 {
-   public function run(){
-       while(true){
+    public function run()
+    {
+        while (true) {
 
-           $this->check();
+            $this->check();
 
-           sleep(60);
-       }
-   }
+            sleep(60);
+        }
+    }
 
-    private function getReminders(){
+    private function getReminders()
+    {
         $conn = new mysqli("localhost", "root", "", "notifikacije");
 
-        $hours = date('H') +2;
-        $time = $hours.date(':i');
+        $hours = date('H') + 2;
+        $time = $hours . date(':i');
         $day = date('w');
 
         var_dump($time);
-        var_dump($day);
+        //var_dump($day);
 
 
         $upit = "";
-        switch($day){
+        switch ($day) {
             case 1:
                 $upit = "ponedeljak = 1";
                 break;
@@ -55,7 +54,7 @@ class Server
                 $upit = "nedelja = 1";
                 break;
         }
-        $sql = "SELECT * FROM podsetnik WHERE ".$upit." AND vreme =\"".$time."\"";
+        $sql = "SELECT * FROM podsetnik WHERE " . $upit . " AND vreme =\"" . $time . "\"";
 
         $reminiders = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
         $conn->close();
@@ -64,21 +63,23 @@ class Server
 
     }
 
-    public function check(){
+    public function check()
+    {
         $reminders = $this->getReminders();
 
-        foreach ($reminders as $reminder ){
+        foreach ($reminders as $reminder) {
             $email = $this->getEmail($reminder['id_korisnik']);
 
-            $this->sendEmail($email,$reminder['opis']);
+            $this->sendEmail($email, $reminder['opis']);
         }
 
     }
 
-    private function getEmail($id){
+    private function getEmail($id)
+    {
         $conn = new mysqli("localhost", "root", "", "notifikacije");
 
-        $sql = "SELECT * FROM korisnik WHERE id_korisnik = ".$id;
+        $sql = "SELECT * FROM korisnik WHERE id_korisnik = " . $id;
 
         $email = $conn->query($sql)->fetch_all(MYSQLI_ASSOC)[0]['email'];
 
@@ -88,8 +89,9 @@ class Server
 
     }
 
-    private function sendEmail($email,$text){
-        mail($email,$text,"from:someone@hotmail.com");
+    private function sendEmail($email, $text)
+    {
+        mail($email, $text, "from:someone@hotmail.com");
     }
 }
 

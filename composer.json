@@ -4,6 +4,7 @@
       "src/services",
       "src/model",
       "src/controllers"
-    ]
+    ],
+    "files": ["config/configuration.php"]
   }
 }
